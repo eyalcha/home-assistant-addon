@@ -96,8 +96,36 @@ services:
       - nvr
     container_name: doubletake
     image: jakowenko/double-take
-    restart: unless-stopped
+    restart: always
     volumes:
+      - /etc/localtime:/etc/localtime:ro    
       - /double-take/.storage:/.storage
     ports:
       - 3000:3000      
+      
+  frigate:
+    profiles:
+      - nvr  
+    container_name: frigate
+    privileged: true
+    image: blakeblackshear/frigate:stable-amd64
+    shm_size: "64mb"
+    devices:
+      # passes the USB Coral
+      - /dev/bus/usb:/dev/bus/usb 
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /frigate/config.yml:/config/config.yml:ro
+      # For sqlite, clips, recording
+      - /media:/media/frigate
+      # Cache location for recording segments 
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000      
+    ports:
+      - 5000:5000
+      - 1935:1935
+    environment:
+      FRIGATE_RTSP_PASSWORD: frigate
+    restart: always      

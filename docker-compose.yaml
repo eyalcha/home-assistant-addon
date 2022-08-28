@@ -1,10 +1,23 @@
 version: '3.7'
 
 volumes:
+  deepstack:
   compreface:
 
 services:
 
+  deepstack:
+    container_name: deepstack
+    image: deepquestai/deepstack
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    environment:
+      VISION-FACE: 'True'
+      MODE: High
+    volumes:
+      - deepstack:/datastore
+      
   facebox:
     container_name: facebox
     image: machinebox/facebox

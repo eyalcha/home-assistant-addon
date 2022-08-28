@@ -3,6 +3,7 @@ version: '3.9'
 volumes:
   deepstack:
   compreface:
+  doubletake:
 
 services:
 
@@ -99,13 +100,13 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro    
-      - /double-take/.storage:/.storage
+      - doubletake:/.storage
     ports:
       - 3000:3000      
       
   frigate:
     profiles:
-      - nvr  
+      - nvr1  
     container_name: frigate
     privileged: true
     image: blakeblackshear/frigate:stable-amd64

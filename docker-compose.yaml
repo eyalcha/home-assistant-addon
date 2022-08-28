@@ -90,3 +90,14 @@ services:
     restart: unless-stopped
     environment:
       - ML_PORT=3000
+      
+  doubletake:
+    profile:
+      - nvr
+    container_name: doubletake
+    image: jakowenko/double-take
+    restart: unless-stopped
+    volumes:
+      - /double-take/.storage:/.storage
+    ports:
+      - 3000:3000      

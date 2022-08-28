@@ -1,4 +1,4 @@
 # Homde Assistant Addons
 
-- [Deepstack]()
-- [CompreFace]()
+- [Deepstack](https://github.com/johnolafenwa/DeepStack)
+- [CompreFace](https://github.com/exadel-inc/CompreFace)

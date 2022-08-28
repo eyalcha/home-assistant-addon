@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.9'
 
 volumes:
   deepstack:
@@ -7,6 +7,8 @@ volumes:
 services:
 
   deepstack:
+    profile:
+      - deepstack
     container_name: deepstack
     image: deepquestai/deepstack
     restart: unless-stopped
@@ -17,18 +19,10 @@ services:
       MODE: High
     volumes:
       - deepstack:/datastore
-      
-  facebox:
-    container_name: facebox
-    image: machinebox/facebox
-    restart: unless-stopped
-    environment:
-      - MB_KEY=XXXXXXXXX
-      - MB_FACEBOX_DISABLE_RECOGNITION=false
-    ports:
-      - 8080:8080
 
   compreface-postgres-db:
+    profile:
+      - compreface  
     image: postgres:11.5
     container_name: "compreface-postgres-db"
     restart: unless-stopped
@@ -40,6 +34,8 @@ services:
       - compreface:/var/lib/postgresql/data
 
   compreface-admin:
+    profile:
+      - compreface    
     image: exadel/compreface-admin:0.6.0
     container_name: "compreface-admin"
     restart: unless-stopped
@@ -59,6 +55,8 @@ services:
       - compreface-api
 
   compreface-api:
+    profile:
+      - compreface    
     image: exadel/compreface-api:0.6.0
     container_name: "compreface-api"
     restart: unless-stopped
@@ -73,6 +71,8 @@ services:
       - SAVE_IMAGES_TO_DB=true
 
   compreface-fe:
+    profile:
+      - compreface    
     image: exadel/compreface-fe:0.6.0
     container_name: "compreface-ui"
     restart: unless-stopped
@@ -83,6 +83,8 @@ services:
       - compreface-admin
 
   compreface-core:
+    profile:
+      - compreface    
     image: exadel/compreface-core:0.6.0
     container_name: "compreface-core"
     restart: unless-stopped

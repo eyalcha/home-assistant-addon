@@ -1,1 +1,3 @@
-# home-assistant-compreface
+# Compreface
+
+https://github.com/exadel-inc/CompreFace

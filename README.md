@@ -1,3 +1,4 @@
-# Compreface
+# Homde Assistant Addons
 
-https://github.com/exadel-inc/CompreFace
+- [Deepstack]()
+- [CompreFace]()

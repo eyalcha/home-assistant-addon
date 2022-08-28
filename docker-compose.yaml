@@ -7,8 +7,6 @@ volumes:
 services:
 
   deepstack:
-    profiles:
-      - deepstack
     container_name: deepstack
     image: deepquestai/deepstack
     restart: unless-stopped
@@ -21,8 +19,6 @@ services:
       - deepstack:/datastore
 
   compreface-postgres-db:
-    profiles:
-      - compreface  
     image: postgres:11.5
     container_name: "compreface-postgres-db"
     restart: unless-stopped
@@ -33,9 +29,7 @@ services:
     volumes:
       - compreface:/var/lib/postgresql/data
 
-  compreface-admin:
-    profiles:
-      - compreface    
+  compreface-admin:   
     image: exadel/compreface-admin:0.6.0
     container_name: "compreface-admin"
     restart: unless-stopped
@@ -54,9 +48,7 @@ services:
       - compreface-postgres-db
       - compreface-api
 
-  compreface-api:
-    profiles:
-      - compreface    
+  compreface-api:  
     image: exadel/compreface-api:0.6.0
     container_name: "compreface-api"
     restart: unless-stopped
@@ -70,9 +62,7 @@ services:
       - API_JAVA_OPTS=-Xmx8g
       - SAVE_IMAGES_TO_DB=true
 
-  compreface-fe:
-    profiles:
-      - compreface    
+  compreface-fe:   
     image: exadel/compreface-fe:0.6.0
     container_name: "compreface-ui"
     restart: unless-stopped
@@ -82,9 +72,7 @@ services:
       - compreface-api
       - compreface-admin
 
-  compreface-core:
-    profiles:
-      - compreface    
+  compreface-core:  
     image: exadel/compreface-core:0.6.0
     container_name: "compreface-core"
     restart: unless-stopped

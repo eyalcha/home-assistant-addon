@@ -92,7 +92,7 @@ services:
       - ML_PORT=3000
       
   doubletake:
-    profile:
+    profiles:
       - nvr
     container_name: doubletake
     image: jakowenko/double-take

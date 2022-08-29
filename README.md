@@ -7,10 +7,10 @@
 
 ## LXC
 
-Install curl and git
+Install packages
 ```
 apt update
-apt install curl git
+apt install curl git zsh
 ```
 
 Install docker 
@@ -22,6 +22,11 @@ sh get-docker.sh
 Install docker compose
 ```
 apt install docker-compose
+```
+
+Install oh-my-zsh
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## LXC NVR

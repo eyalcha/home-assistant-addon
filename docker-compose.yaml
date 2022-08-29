@@ -3,6 +3,8 @@ version: '3.9'
 services:
 
   samba:
+    profiles:
+      - nas
     image: dperson/samba:latest
     container_name: samba
     command: '-u "user;user" -s "share;/share;yes;no;no"'

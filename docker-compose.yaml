@@ -1,10 +1,5 @@
 version: '3.9'
 
-volumes:
-  doubletake:
-  deepstack:
-  compreface:
-
 services:
 
   deepstack:
@@ -19,7 +14,7 @@ services:
       VISION-FACE: 'True'
       MODE: High
     volumes:
-      - deepstack:/datastore
+      - ${volume}/deepstack:/datastore
       
   compreface-postgres-db:
     profiles:
@@ -32,7 +27,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=frs
     volumes:
-      - compreface:/var/lib/postgresql/data
+      - ${volume}/compreface:/var/lib/postgresql/data
 
   compreface-admin:   
     profiles:
@@ -100,7 +95,8 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro    
-      - doubletake:/.storage
+      - ${volume}/doubletake:/.storage
+      - 
     ports:
       - 3000:3000      
       
@@ -115,7 +111,7 @@ services:
       - /dev/bus/usb:/dev/bus/usb 
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /frigate/config.yaml:/config/config.yml:ro
+      - ${volume}/frigate/config.yaml:/config/config.yml:ro
       - ${share}/media:/media/frigate
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
         target: /tmp/cache

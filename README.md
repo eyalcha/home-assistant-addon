@@ -5,7 +5,7 @@
 - [Frigate]()
 - [Double-Take]()
 
-# LXC
+## LXC
 
 Install curl and git
 ```
@@ -24,7 +24,7 @@ Install docker compose
 apt install docker-compose
 ```
 
-# LXC NVR
+## LXC NVR
 
 Add to pve lxc conf (/etc/pve/lxc/xxx.conf)
 ```

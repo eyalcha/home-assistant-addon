@@ -96,7 +96,6 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro    
       - ${volume}/doubletake:/.storage
-      - 
     ports:
       - 3000:3000      
       

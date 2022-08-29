@@ -2,6 +2,19 @@ version: '3.9'
 
 services:
 
+  samba:
+    image: dperson/samba:latest
+    container_name: samba
+    command: '-u "user;user" -s "share;/share;yes;no;no"'
+    environment:
+      - TZ=${tz}
+    ports:
+      - 139:139/tcp
+      - 445:445/tcp
+    volumes:
+      - ${share}:/share
+    restart: unless-stopped
+    
   deepstack:
     profiles:
       - deepstack      

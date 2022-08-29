@@ -4,6 +4,7 @@
 - [CompreFace](https://github.com/exadel-inc/CompreFace)
 - [Frigate]()
 - [Double-Take]()
+- [Samba]()
 
 ## LXC
 
@@ -44,6 +45,18 @@ lxc.apparmor.profile: unconfined
 lxc.cgroup2.devices.allow: a
 lxc.cap.drop: 
 lxc.mount.auto: cgroup:rw
+```
+
+## LXC Samaba
+
+Mount share to container
+```
+pct set <id> -mp0 /mnt/ext1/share,mp=/share
+```
+
+Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
+```
+lxc.apparmor.profile: unconfined
 ```
 
 ## Share EXT with LXC

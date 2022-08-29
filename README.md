@@ -31,7 +31,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ## LXC NVR
 
-Add to pve lxc conf (/etc/pve/lxc/xxx.conf)
+Check usb devices
+```
+lsusb
+```
+
+Add to pve lxc conf (/etc/pve/lxc/<id>.conf)
 ```
 lxc.mount.entry: /dev/bus/usb/002/ dev/bus/usb/002/ none bind,optional,create=dir 0,0
 lxc.cgroup2.devices.allow: c 189:* rwm
@@ -40,6 +45,14 @@ lxc.cgroup2.devices.allow: a
 lxc.cap.drop: 
 lxc.mount.auto: cgroup:rw
 ```
+
+## Share EXT with LXC
+
+Run in pve
+```
+pct set <id> -mp0 /mnt/ext1/share,mp=/share
+```
+
 
 
 

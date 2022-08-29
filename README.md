@@ -59,6 +59,11 @@ Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
 lxc.apparmor.profile: unconfined
 ```
 
+Resource|Size
+---|---
+Disk | 2G
+Memory | 512Mb
+
 ## Share EXT with LXC
 
 Run in pve

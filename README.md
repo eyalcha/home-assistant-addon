@@ -51,6 +51,22 @@ Run in pve
 mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 ```
 
+## LXC Deepstack
+
+Resource|Size
+---|---
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 8G
+Memory | 2G
+
+## LXC Compreface
+
+Resource|Size
+---|---
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 
+Memory | 
+
 ## LXC NVR
 
 Resource|Size

@@ -1,10 +1,6 @@
 # Home Assistant Addons
 
-- [Deepstack](https://github.com/johnolafenwa/DeepStack)
-- [CompreFace](https://github.com/exadel-inc/CompreFace)
-- [Frigate]()
-- [Double-Take]()
-- [Samba]()
+- [LXC Template](#LXC Template)
 
 ## LXC Template
 
@@ -56,6 +52,7 @@ mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-st
 
 Resource|Size
 ---|---
+Github | https://github.com/johnolafenwa/DeepStack
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
 Disk | 8G
@@ -77,6 +74,7 @@ pct reboot <ctid>
 
 Resource|Size
 ---|---
+Github | https://github.com/exadel-inc/CompreFace
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
 Disk | 
@@ -112,8 +110,11 @@ Share drive with lxc, run in pve
 ```
 pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
 ```
-
-Restart lxc
+  
+Restart container
+```
+pct reboot <ctid>
+```
 
 ### Install
 

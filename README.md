@@ -111,7 +111,7 @@ git clone https://github.com/eyalcha/home-assistant-addons.git
 cd home-assistant-addons
 ```
 
-Start nvr
+Start addon
 ```
 docker-compose --profile nvr up -d
 ```
@@ -144,14 +144,20 @@ Get addons compose
 ```
 git clone https://github.com/eyalcha/home-assistant-addons.git
 ```
-  
-Build Agendav image, clone agendav repository
-```
-git clone https://github.com/nagimov/agendav-docker.git
-cd agendav-docker
-docker build -t agendav .
-```
 
+Create addon folder (see https://github.com/ckulka/baikal-docker/blob/master/examples/docker-compose.localvolumes.yaml)
+```
+cd /share/addon
+mkdir -p config data/db
+chown -R 33:33 config data
+cd -
+```
+  
+Start addon
+```
+docker-compose --profile calendar up -d
+```
+  
 ## LXC Samaba
 
 ### Resources

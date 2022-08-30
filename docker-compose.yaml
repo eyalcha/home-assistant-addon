@@ -164,7 +164,7 @@ services:
       - AGENDAV_FOOTER=Hosted by HomeAssistant
       - AGENDAV_ENC_KEY=my_encrypt10n_k3y
       - AGENDAV_CALDAV_SERVER=http://baikal.home:5000/cal.php
-      - AGENDAV_TIMEZONE=${TZ}
+      - AGENDAV_TIMEZONE=${tz}
       - AGENDAV_LANG=en
       - AGENDAV_LOG_DIR=/tmp/
     depends_on:

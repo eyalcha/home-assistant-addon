@@ -1,6 +1,11 @@
 # Home Assistant Addons
 
 - [LXC Template](#lxc-template)
+- [LXC Deepstack](#lxc-deepstack)
+- [LXC Compreface](#lxc-compreface)
+- [LXC NVR](#lxc-nvr)
+- [LXC Calendar](#lxc-calendar)
+- [LXC Samba](#lxc-samba)
 
 ## LXC Template
 

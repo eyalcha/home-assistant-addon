@@ -10,6 +10,14 @@
 
 Template for home assistant lxc addons
 
+### Resources
+
+Resource|Size
+---|---
+Template | ubuntu-22.04-standard_22.04-1_amd64.tar.zst
+Disk | 2G
+Memory | 512Mb
+
 ### Install
 
 Install packages
@@ -34,16 +42,24 @@ Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### Resources
+### Create Template
 
-Resource|Size
----|---
-Disk | 2G
-Memory | 512Mb
+Stop container and backup as gzip
+
+Run in pve
+```
+mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+```
 
 ## LXC NVR
 
-## Install
+Resource|Size
+---|---
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 
+Memory |
+
+### Configure
 
 Check usb devices
 ```
@@ -59,10 +75,23 @@ lxc.cgroup2.devices.allow: a
 lxc.cap.drop: 
 lxc.mount.auto: cgroup:rw
 ```
+  
+Share drive with lxc, Run in pve
+```
+pct set <id> -mp0 /mnt/ext1/share,mp=/share
+```
 
 ## LXC Samaba
 
-### Install
+### Resources
+  
+Resource|Size
+---|---
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 2G
+Memory | 512Mb
+  
+### Configure
 
 Mount share to container
 ```
@@ -74,20 +103,10 @@ Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
 lxc.apparmor.profile: unconfined
 ```
 
-### Resources
-  
-Resource|Size
----|---
-Disk | 2G
-Memory | 512Mb
-
-## Share EXT with LXC
-
-Run in pve
+Share drive with lxc, Run in pve
 ```
 pct set <id> -mp0 /mnt/ext1/share,mp=/share
 ```
-
 
 
 

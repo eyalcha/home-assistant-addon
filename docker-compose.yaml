@@ -148,7 +148,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro    
       - ${volume}/baikal/config:/var/www/baikal/config
-      - ${volume}/baikal/specific:/var/www/baikal/Specific
+      - ${volume}/baikal/data:/var/www/baikal/Specific
     restart: always
 
   agendav:

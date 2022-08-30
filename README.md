@@ -61,6 +61,18 @@ Unpriviliged | No
 Disk | 8G
 Memory | 2G
 
+### Configure
+
+Mount share to container, run in pve
+```
+pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
+```
+
+Restart container
+```
+pct reboot <ctid>
+```
+
 ## LXC Compreface
 
 Resource|Size

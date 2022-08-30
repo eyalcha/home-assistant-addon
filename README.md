@@ -81,6 +81,42 @@ Share drive with lxc, Run in pve
 pct set <id> -mp0 /mnt/ext1/share,mp=/share
 ```
 
+Restart lxc
+
+### Install
+
+Get addons compose
+```
+git clone https://github.com/eyalcha/home-assistant-addons.git
+```
+
+Start nvr
+```
+docker-compose --profile nvr up -d
+```
+
+## LXC Calendar
+
+### Resources
+  
+Resource|Size
+---|---
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 2G
+Memory | 512Mb
+  
+### Configure
+
+...
+
+### Install
+
+Get addons compose
+```
+git clone https://github.com/eyalcha/home-assistant-addons.git
+```
+
+
 ## LXC Samaba
 
 ### Resources

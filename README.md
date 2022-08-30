@@ -60,7 +60,7 @@ Resource|Size
 Github | https://github.com/johnolafenwa/DeepStack
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
-Disk | 8G
+Disk | 16G
 Memory | 2G
 
 ### Configure
@@ -82,8 +82,8 @@ Resource|Size
 Github | https://github.com/exadel-inc/CompreFace
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
-Disk | 
-Memory | 
+Disk | 16G
+Memory | 1G
 
 ## LXC NVR
 

@@ -6,7 +6,11 @@
 - [Double-Take]()
 - [Samba]()
 
-## LXC
+## LXC Template
+
+Template for home assistant lxc addons
+
+### Install
 
 Install packages
 ```
@@ -30,7 +34,16 @@ Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+### Resources
+
+Resource|Size
+---|---
+Disk | 2G
+Memory | 512Mb
+
 ## LXC NVR
+
+## Install
 
 Check usb devices
 ```
@@ -49,6 +62,8 @@ lxc.mount.auto: cgroup:rw
 
 ## LXC Samaba
 
+### Install
+
 Mount share to container
 ```
 pct set <id> -mp0 /mnt/ext1/share,mp=/share
@@ -59,6 +74,8 @@ Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
 lxc.apparmor.profile: unconfined
 ```
 
+### Resources
+  
 Resource|Size
 ---|---
 Disk | 2G

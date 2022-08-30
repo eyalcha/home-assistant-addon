@@ -1,6 +1,6 @@
 # Home Assistant Addons
 
-- [LXC Template](#LXC Template)
+- [LXC Template](#lxc-template)
 
 ## LXC Template
 

@@ -88,6 +88,7 @@ Restart lxc
 Get addons compose
 ```
 git clone https://github.com/eyalcha/home-assistant-addons.git
+cd home-assistant-addons
 ```
 
 Start nvr

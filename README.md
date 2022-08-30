@@ -75,6 +75,19 @@ Restart container
 pct reboot <ctid>
 ```
 
+### Install
+
+Get addons compose
+```
+git clone https://github.com/eyalcha/home-assistant-addons.git
+cd home-assistant-addons
+```
+
+Start addon
+```
+docker-compose --profile deepstack up -d
+```
+
 ## LXC Compreface
 
 Resource|Size
@@ -84,6 +97,31 @@ Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
 Disk | 16G
 Memory | 1G
+
+### Configure
+
+Mount share to container, run in pve
+```
+pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
+```
+
+Restart container
+```
+pct reboot <ctid>
+```
+
+### Install
+
+Get addons compose
+```
+git clone https://github.com/eyalcha/home-assistant-addons.git
+cd home-assistant-addons
+```
+
+Start addon
+```
+docker-compose --profile compreface up -d
+```
 
 ## LXC NVR
 

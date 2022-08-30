@@ -76,7 +76,7 @@ lxc.cap.drop:
 lxc.mount.auto: cgroup:rw
 ```
   
-Share drive with lxc, Run in pve
+Share drive with lxc, run in pve
 ```
 pct set <id> -mp0 /mnt/ext1/share,mp=/share
 ```
@@ -108,7 +108,15 @@ Memory | 512Mb
   
 ### Configure
 
-...
+Mount share to container, run in pve
+```
+pct set <id> -mp0 /mnt/ext1/share,mp=/share
+```
+
+Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
+```
+lxc.apparmor.profile: unconfined
+```
 
 ### Install
 
@@ -136,7 +144,7 @@ Memory | 512Mb
   
 ### Configure
 
-Mount share to container
+Mount share to container, run in pve
 ```
 pct set <id> -mp0 /mnt/ext1/share,mp=/share
 ```
@@ -144,9 +152,4 @@ pct set <id> -mp0 /mnt/ext1/share,mp=/share
 Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
 ```
 lxc.apparmor.profile: unconfined
-```
-
-Share drive with lxc, Run in pve
-```
-pct set <id> -mp0 /mnt/ext1/share,mp=/share
 ```

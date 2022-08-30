@@ -149,7 +149,12 @@ Mount share to container, run in pve
 pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
 ```
 
-Remove security profile, add to pve lxc conf (/etc/pve/lxc/<ctid>.conf)
+Remove security profile, add to pve lxc conf (/etc/pve/lxc/\<ctid\>.conf)
 ```
 lxc.apparmor.profile: unconfined
+```
+
+Restart container
+```
+pct reboot <ctid>
 ```

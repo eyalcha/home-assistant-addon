@@ -66,7 +66,7 @@ Check usb devices
 lsusb
 ```
 
-Add to pve lxc conf (/etc/pve/lxc/<id>.conf)
+Add to pve lxc conf (/etc/pve/lxc/<ctid>.conf)
 ```
 lxc.mount.entry: /dev/bus/usb/002/ dev/bus/usb/002/ none bind,optional,create=dir 0,0
 lxc.cgroup2.devices.allow: c 189:* rwm
@@ -78,7 +78,7 @@ lxc.mount.auto: cgroup:rw
   
 Share drive with lxc, run in pve
 ```
-pct set <id> -mp0 /mnt/ext1/share,mp=/share
+pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
 ```
 
 Restart lxc
@@ -110,10 +110,10 @@ Memory | 512Mb
 
 Mount share to container, run in pve
 ```
-pct set <id> -mp0 /mnt/ext1/share,mp=/share
+pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
 ```
 
-Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
+Remove security profile, add to pve lxc conf (/etc/pve/lxc/<ctid>.conf)
 ```
 lxc.apparmor.profile: unconfined
 ```
@@ -146,10 +146,10 @@ Memory | 512Mb
 
 Mount share to container, run in pve
 ```
-pct set <id> -mp0 /mnt/ext1/share,mp=/share
+pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
 ```
 
-Remove security profile, add to pve lxc conf (/etc/pve/lxc/<id>.conf)
+Remove security profile, add to pve lxc conf (/etc/pve/lxc/<ctid>.conf)
 ```
 lxc.apparmor.profile: unconfined
 ```

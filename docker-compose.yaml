@@ -141,10 +141,10 @@ services:
   baikal:
     profiles:
       - calendar
-    image: baikal:0.9.2.patch
+    image: eyalcohen/baikal:0.9.2
     container_name: baikal
     ports:
-      - 5000:80
+      - 3000:80
     volumes:
       - /etc/localtime:/etc/localtime:ro    
       - ${volume}/baikal/config:/var/www/baikal/config

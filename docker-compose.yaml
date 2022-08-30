@@ -136,4 +136,39 @@ services:
       - 1935:1935
     environment:
       FRIGATE_RTSP_PASSWORD: frigate
-    restart: always 
+    restart: always
+    
+  baikal:
+    profiles:
+      - calendar
+    image: baikal:0.9.2.patch
+    container_name: baikal
+    ports:
+      - 80:80
+    volumes:
+      - /etc/localtime:/etc/localtime:ro    
+      - ${volume}/baikal/config:/var/www/baikal/config
+      - ${volume}/baikal/data:/var/www/baikal/Specific
+    restart: always
+
+  agendav:
+    profiles:
+      - calendar  
+    image: agendav:latest
+    container_name: agendav
+    volumes:
+      - /etc/localtime:/etc/localtime:ro    
+    environment:
+      - AGENDAV_SERVER_NAME=127.0.0.1
+      - AGENDAV_TITLE=Welcome to HomeAssistant Agendav Server
+      - AGENDAV_FOOTER=Hosted by HomeAssistant
+      - AGENDAV_ENC_KEY=my_encrypt10n_k3y
+      - AGENDAV_CALDAV_SERVER=http://baikal.home:5000/cal.php
+      - AGENDAV_TIMEZONE=${TZ}
+      - AGENDAV_LANG=en
+      - AGENDAV_LOG_DIR=/tmp/
+    depends_on:
+      - baikal      
+    ports:
+      - 5000:80
+    restart: always    

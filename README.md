@@ -15,6 +15,7 @@ Template for home assistant lxc addons
 Resource|Size
 ---|---
 Template | ubuntu-22.04-standard_22.04-1_amd64.tar.zst
+Unpriviliged | No
 Disk | 2G
 Memory | 512Mb
 
@@ -56,6 +57,7 @@ mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-st
 Resource|Size
 ---|---
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Unpriviliged | No
 Disk | 8G
 Memory | 2G
 
@@ -64,6 +66,7 @@ Memory | 2G
 Resource|Size
 ---|---
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Unpriviliged | No
 Disk | 
 Memory | 
 
@@ -72,6 +75,7 @@ Memory |
 Resource|Size
 ---|---
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Unpriviliged | No
 Disk | 
 Memory |
 

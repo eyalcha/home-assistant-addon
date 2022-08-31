@@ -6,7 +6,7 @@
 - [LXC NVR](#lxc-nvr)
 - [LXC Calendar](#lxc-calendar)
 - [LXC Samba](#lxc-samba)
-- [LXC Samba](#lxc-mosquitto)
+- [LXC Mqtt](#lxc-mqtt)
 
 ## LXC Template
 

@@ -56,7 +56,7 @@ mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-st
 
 ## LXC Deepstack
 
-Resource|Size
+Name|Value
 ---|---
 Boot Order | 10
 Github | https://github.com/johnolafenwa/DeepStack

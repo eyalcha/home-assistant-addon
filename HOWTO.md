@@ -23,6 +23,13 @@ Mount drive
 mount -a
 ```
 
+## Clean Docker Images
+
+When disk usage is high, it might relates to docker images. Clean folder vfs
+```bash
+rm -rf /var/lib/docker/vfs/dir/*
+```
+
 ## Proxmox USB Passthrough
 
 ![USB Passthrough](./docs/proxmox-7.1-sb-passthrough.jpg "Proxmox 7.1")

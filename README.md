@@ -6,6 +6,7 @@
 - [LXC NVR](#lxc-nvr)
 - [LXC Calendar](#lxc-calendar)
 - [LXC Samba](#lxc-samba)
+- [LXC Samba](#lxc-mosquitto)
 
 ## LXC Template
 
@@ -238,6 +239,34 @@ Boot Order | 0
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 2G
 Memory | 512Mb
+  
+### Configure
+
+Mount share to container, run in pve
+```
+pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
+```
+
+Remove security profile, add to pve lxc conf (/etc/pve/lxc/\<ctid\>.conf)
+```
+lxc.apparmor.profile: unconfined
+```
+
+Restart container
+```
+pct reboot <ctid>
+```
+
+## LXC Mqtt
+
+### Resources
+  
+Resource|Size
+---|---
+Boot Order | 1
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 2G
+Memory | 256Mb
   
 ### Configure
 

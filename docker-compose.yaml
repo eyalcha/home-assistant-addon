@@ -28,8 +28,6 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${volume}/mosquitto/config:/mosquitto/config:rw
-      - ${volume}/mosquitto/data:/mosquitto/data
-      - ${volume}/mosquitto/log:/mosquitto/log
     restart: always
     
   deepstack:

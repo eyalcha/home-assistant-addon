@@ -57,6 +57,7 @@ mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-st
 
 Resource|Size
 ---|---
+Boot Order | 10
 Github | https://github.com/johnolafenwa/DeepStack
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
@@ -92,6 +93,7 @@ docker-compose --profile deepstack up -d
 
 Resource|Size
 ---|---
+Boot Order | 10
 Github | https://github.com/exadel-inc/CompreFace
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
@@ -127,6 +129,7 @@ docker-compose --profile compreface up -d
 
 Resource|Size
 ---|---
+Boot Order | 10 (addon)
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Unpriviliged | No
 Disk | 
@@ -178,6 +181,7 @@ docker-compose --profile nvr up -d
   
 Resource|Size
 ---|---
+Boot Order | 10
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 2G
 Memory | 512Mb
@@ -220,6 +224,7 @@ docker-compose --profile calendar up -d
   
 Resource|Size
 ---|---
+Boot Order | 0
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 2G
 Memory | 512Mb

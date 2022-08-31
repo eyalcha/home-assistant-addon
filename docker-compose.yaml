@@ -17,6 +17,21 @@ services:
       - ${share}:/share
     restart: unless-stopped
     
+  mosquitto:
+    profiles:
+      - mqtt
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    privileged: true
+    ports:
+      - 1883:1883
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${volume}/mosquitto/config:/mosquitto/config:rw
+      - ${volume}/mosquitto/data:/mosquitto/data
+      - ${volume}/mosquitto/log:/mosquitto/log
+    restart: always
+    
   deepstack:
     profiles:
       - deepstack      

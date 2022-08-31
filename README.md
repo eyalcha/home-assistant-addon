@@ -71,6 +71,11 @@ Mount share to container, run in pve
 pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
 ```
 
+Add to pve lxc conf (/etc/pve/lxc/\<ctid\>.conf)
+```
+lxc.apparmor.profile: unconfined
+```
+
 Restart container
 ```
 pct reboot <ctid>
@@ -105,6 +110,11 @@ Memory | 1G
 Mount share to container, run in pve
 ```
 pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
+```
+
+Add to pve lxc conf (/etc/pve/lxc/\<ctid\>.conf)
+```
+lxc.apparmor.profile: unconfined
 ```
 
 Restart container
@@ -142,7 +152,7 @@ Check usb devices
 lsusb
 ```
 
-Add to pve lxc conf (/etc/pve/lxc/<ctid>.conf)
+Add to pve lxc conf (/etc/pve/lxc/\<ctid\>.conf)
 ```
 lxc.mount.entry: /dev/bus/usb/002/ dev/bus/usb/002/ none bind,optional,create=dir 0,0
 lxc.cgroup2.devices.allow: c 189:* rwm

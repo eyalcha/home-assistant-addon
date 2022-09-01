@@ -5,7 +5,7 @@ services:
   samba:
     profiles:
       - nas
-    image: dperson/samba:latest
+    image: ${samba_image}:${samba_version}
     container_name: samba
     command: '-u "user;user" -s "share;/share;yes;no;no"'
     environment:
@@ -21,7 +21,7 @@ services:
     profiles:
       - mqtt
     container_name: mosquitto
-    image: eclipse-mosquitto:latest
+    image: ${mosquitto_image}:${mosquitto_version}
     ports:
       - 1883:1883
     volumes:
@@ -33,7 +33,7 @@ services:
     profiles:
       - deepstack      
     container_name: deepstack
-    image: deepquestai/deepstack
+    image: ${deepstak_image}:${deepstack_version}
     restart: unless-stopped
     ports:
       - 5000:5000
@@ -118,7 +118,7 @@ services:
     profiles:
       - nvr
     container_name: doubletake
-    image: jakowenko/double-take
+    image: ${doubletake_image}:${doubletake_version}
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro    
@@ -131,7 +131,7 @@ services:
       - nvr  
     container_name: frigate
     privileged: true
-    image: blakeblackshear/frigate:stable-amd64
+    image: ${frigate_image}:${frigate_version}
     shm_size: "64mb"
     devices:
       - /dev/bus/usb:/dev/bus/usb 
@@ -153,7 +153,7 @@ services:
   baikal:
     profiles:
       - calendar
-    image: eyalcohen/baikal:0.9.2
+    image: ${baikal_image}:${baikal_version}
     container_name: baikal
     ports:
       - 3000:80
@@ -166,7 +166,7 @@ services:
   agendav:
     profiles:
       - calendar  
-    image: eyalcohen/agendav
+    image: ${agnedav_image}:${agendav_version}
     container_name: agendav
     volumes:
       - /etc/localtime:/etc/localtime:ro    

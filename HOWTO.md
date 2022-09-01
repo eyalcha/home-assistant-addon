@@ -1,5 +1,12 @@
 # HowTo
 
+## SSH to CT
+
+By default it’s not possible to establish a direct SSH connection to a Proxmox LXC container. In order to SSH into a container login to Proxmox host and attach to the container with the following command.
+```
+lxc-attach --name \<ctid\>
+```
+
 ## Auto Mount USB Drive on Startup
 
 In order to mount your USB drive permanently after reboot add a line into your /etc/fstab config file. If drives are added or removed from the Proxmox the device may change.  For this reason the partion UUID will need to be used instead of the block device name.

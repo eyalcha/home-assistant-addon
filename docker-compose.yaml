@@ -33,7 +33,7 @@ services:
     profiles:
       - deepstack      
     container_name: deepstack
-    image: ${deepstak_image}:${deepstack_version}
+    image: ${deepstack_image}:${deepstack_version}
     restart: unless-stopped
     ports:
       - 5000:5000

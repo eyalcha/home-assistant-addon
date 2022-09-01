@@ -46,7 +46,7 @@ services:
   compreface-postgres-db:
     profiles:
       - compreface    
-    image: postgres:11.5
+    image: ${postgres_image}:${postgres_version}
     container_name: "compreface-postgres-db"
     restart: unless-stopped
     environment:
@@ -59,7 +59,7 @@ services:
   compreface-admin:   
     profiles:
       - compreface      
-    image: exadel/compreface-admin:0.6.0
+    image: ${compreface_admin_image}:${compreface_admin_version}
     container_name: "compreface-admin"
     restart: unless-stopped
     environment:

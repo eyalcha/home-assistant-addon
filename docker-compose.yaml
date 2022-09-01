@@ -63,16 +63,16 @@ services:
     container_name: "compreface-admin"
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_URL=jdbc:postgresql://compreface-postgres-db:5432/frs
+      - POSTGRES_USER=${postgres_username}
+      - POSTGRES_PASSWORD=${postgres_password}
+      - POSTGRES_URL=jdbc:postgresql://${postgres_domain}:${postgres_port}/${postgres_db}
       - SPRING_PROFILES_ACTIVE=dev
-      - ENABLE_EMAIL_SERVER=false
-      - EMAIL_HOST=smtp.gmail.com
-      - EMAIL_USERNAME=
-      - EMAIL_FROM=
-      - EMAIL_PASSWORD=
-      - ADMIN_JAVA_OPTS=-Xmx8g
+      - ENABLE_EMAIL_SERVER=${enable_email_server}
+      - EMAIL_HOST=${email_host}
+      - EMAIL_USERNAME=${email_username}
+      - EMAIL_FROM=${email_from}
+      - EMAIL_PASSWORD=${email_password}
+      - ADMIN_JAVA_OPTS=${compreface_admin_java_options}
     depends_on:
       - compreface-postgres-db
       - compreface-api

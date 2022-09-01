@@ -90,6 +90,11 @@ git clone https://github.com/eyalcha/home-assistant-addons.git
 cd home-assistant-addons
 ```
 
+First download base image
+```
+docker pull deepquestai/deepstack-base:cpu-1647248158
+```
+
 Start addon
 ```
 docker-compose --profile deepstack up -d

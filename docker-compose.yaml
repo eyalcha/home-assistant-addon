@@ -50,9 +50,9 @@ services:
     container_name: "compreface-postgres-db"
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=frs
+      - POSTGRES_USER=${postgres_username}
+      - POSTGRES_PASSWORD=${postgres_password}
+      - POSTGRES_DB=${postgres_db}
     volumes:
       - ${volume}/compreface:/var/lib/postgresql/data
 
@@ -86,12 +86,12 @@ services:
     depends_on:
       - compreface-postgres-db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_URL=jdbc:postgresql://compreface-postgres-db:5432/frs
+      - POSTGRES_USER=${postgres_username}
+      - POSTGRES_PASSWORD=${postgres_password}
+      - POSTGRES_URL=jdbc:postgresql://${postgres_domain}:${postgres_port}/${postgres_db}
       - SPRING_PROFILES_ACTIVE=dev
-      - API_JAVA_OPTS=-Xmx8g
-      - SAVE_IMAGES_TO_DB=true
+      - API_JAVA_OPTS=${compreface_api_java_options}
+      - SAVE_IMAGES_TO_DB=${save_images_to_db}
 
   compreface-fe:   
     profiles:

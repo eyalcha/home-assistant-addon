@@ -166,7 +166,7 @@ services:
   agendav:
     profiles:
       - calendar  
-    image: ${agnedav_image}:${agendav_version}
+    image: ${agendav_image}:${agendav_version}
     container_name: agendav
     volumes:
       - /etc/localtime:/etc/localtime:ro    

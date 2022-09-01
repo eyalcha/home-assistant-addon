@@ -80,7 +80,7 @@ services:
   compreface-api:  
     profiles:
       - compreface      
-    image: exadel/compreface-api:0.6.0
+    image: ${compreface_api_image}:${compreface_api_version}
     container_name: "compreface-api"
     restart: unless-stopped
     depends_on:
@@ -96,7 +96,7 @@ services:
   compreface-fe:   
     profiles:
       - compreface    
-    image: exadel/compreface-fe:0.6.0
+    image: ${compreface_fe_image}:${compreface_fe_version}
     container_name: "compreface-ui"
     restart: unless-stopped
     ports:
@@ -108,7 +108,7 @@ services:
   compreface-core:  
     profiles:
       - compreface      
-    image: exadel/compreface-core:0.6.0
+    image: ${compreface_core_image}:${compreface_core_version}
     container_name: "compreface-core"
     restart: unless-stopped
     environment:

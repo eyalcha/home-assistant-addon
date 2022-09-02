@@ -7,7 +7,7 @@ services:
       - nas
     image: ${samba_image}:${samba_version}
     container_name: samba
-    command: '-u "user;user" -s "share;/share;yes;no;no"'
+    command: '-u "smbuser;smbuser" -s "share;/share;yes;no;yes"'
     environment:
       - TZ=${tz}
     ports:

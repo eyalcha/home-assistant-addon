@@ -9,51 +9,18 @@
 - [Samba](#lxc-samba)
 - [Mqtt](#lxc-mqtt)
 
-## LXC Template
+### LXC Samaba
 
-Template for home assistant lxc addons
-
-### Resources
-
+#### Resources
+  
 Resource|Size
 ---|---
-Template | ubuntu-22.04-standard_22.04-1_amd64.tar.zst
-Unpriviliged | No
+Boot Order | 0
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 2G
 Memory | 512Mb
-
-### Install
-
-Install packages
-```
-apt update
-apt install curl git zsh
-```
-
-Install docker 
-```
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-```
-
-Install docker compose
-```
-apt install docker-compose
-```
-
-Install oh-my-zsh
-```
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-### Create Template
-
-Stop container and backup as gzip
-
-Run in pve
-```
-mv /mnt/<shared>/dump/<backup>.tar.gz /var/lib/vz/template/cache/ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
-```
+Share | ```-mp0 /mnt/ext1/share,mp=/share```
+Apparmor | ```lxc.apparmor.profile: unconfined```
 
 ## LXC Deepstack
 
@@ -233,34 +200,6 @@ cd -
 Start addon
 ```
 docker-compose --profile calendar up -d
-```
-  
-## LXC Samaba
-
-### Resources
-  
-Resource|Size
----|---
-Boot Order | 0
-Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
-Disk | 2G
-Memory | 512Mb
-  
-### Configure
-
-Mount share to container, run in pve
-```
-pct set <ctid> -mp0 /mnt/ext1/share,mp=/share
-```
-
-Remove security profile, add to pve lxc conf (/etc/pve/lxc/\<ctid\>.conf)
-```
-lxc.apparmor.profile: unconfined
-```
-
-Restart container
-```
-pct reboot <ctid>
 ```
 
 ## LXC Mqtt

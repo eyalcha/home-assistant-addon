@@ -2,6 +2,18 @@ version: '3.9'
 
 services:
 
+  duplicati:
+    image: ${duplicati_image}:${duplicati_version}
+    container_name: duplicati
+    ports:
+      - 8200:8200
+    environment:
+      - TZ=${tz}
+    volumes:
+      - ${volume}/duplicati/config:/config
+      - ${share}:/share
+    restart: always
+    
   samba:
     profiles:
       - nas

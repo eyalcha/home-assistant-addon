@@ -13,7 +13,7 @@ services:
       - TZ=${tz}
     volumes:
       - ${volume}/duplicati/config:/config
-      - ${share}:/share
+      - ${share1}:/share1
     restart: always
     
   samba:
@@ -21,14 +21,14 @@ services:
       - nas
     image: ${samba_image}:${samba_version}
     container_name: samba
-    command: '-u "smbuser;smbuser" -s "share;/share;yes;no;yes"'
+    command: '-u "smbuser;smbuser" -s "share1;/share1;yes;no;yes"'
     environment:
       - TZ=${tz}
     ports:
       - 139:139/tcp
       - 445:445/tcp
     volumes:
-      - ${share}:/share
+      - ${share1}:/share1
     restart: always
     
   mosquitto:
@@ -152,7 +152,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${volume}/frigate/config.yaml:/config/config.yml:ro
-      - ${share}/media:/media/frigate
+      - ${share1}/media:/media/frigate
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
         target: /tmp/cache
         tmpfs:

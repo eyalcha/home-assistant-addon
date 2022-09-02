@@ -3,6 +3,8 @@ version: '3.9'
 services:
 
   homeassistant:
+    profiles:
+      - hass
     container_name: homeassistant
     image: ${homeassistant_image}:${homeassistant_version}
     volumes:

@@ -1,26 +1,26 @@
 # Home Assistant
 
-- [Template](#lxc-template)
+- [Samba](#lxc-samba)
+
 - [Homeassistant](#lxc-home-assistant)
 - [Deepstack](#lxc-deepstack)
 - [Compreface](#lxc-compreface)
 - [NVR](#lxc-nvr)
 - [Calendar](#lxc-calendar)
-- [Samba](#lxc-samba)
 - [Mqtt](#lxc-mqtt)
 
 ### LXC Samaba
 
 #### Resources
   
-Resource|Size|
+Resource|Size|Proxmox Shell
 ---|---|---
-Boot Order | 0
-Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
-Disk | 2G
-Memory | 512Mb
+Boot Order | 0 |
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz |
+Disk | 2G |
+Memory | 512Mb |
 Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
-Apparmor | ```lxc.apparmor.profile: unconfined```
+Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
 
 ## LXC Deepstack
 

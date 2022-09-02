@@ -2,6 +2,19 @@ version: '3.9'
 
 services:
 
+  homeassistant:
+    container_name: homeassistant
+    image: ${homeassistant_image}:${homeassistant_version}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ${share1}/home-assistant/config:/config
+    environment:
+      - TZ=${tz} 
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+
   duplicati:
     profiles:
       - backup

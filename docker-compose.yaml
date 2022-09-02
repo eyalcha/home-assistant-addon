@@ -3,6 +3,8 @@ version: '3.9'
 services:
 
   duplicati:
+    profiles:
+      - backup
     image: ${duplicati_image}:${duplicati_version}
     container_name: duplicati
     ports:

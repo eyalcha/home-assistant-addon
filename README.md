@@ -8,29 +8,48 @@
 - [NVR](#lxc-nvr)
 - [Calendar](#lxc-calendar)
 
-### LXC Samaba
+### Samaba
 
 #### Resources
   
 Resource|Size|Proxmox Shell
 ---|---|---
+Type | LXC | 
 Boot Order | 0 |
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz |
 Disk | 2G |
 Memory | 512Mb |
+Swap | 
 Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
 Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
 
-### LXC Mqtt
+### Mqtt
 
 #### Resources
   
 Resource|Size|Proxmox Shell
 ---|---|---
+Type | LXC | 
 Boot Order | 1
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 2G
 Memory | 256Mb
+Swap | 
+Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
+Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
+
+### Duplicati
+
+#### Resources
+  
+Resource|Size|Proxmox Shell
+---|---|---
+Type | LXC | 
+Boot Order | 10
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 8G
+Memory | 512Mb
+Swap | 512Mb
 Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
 Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
 

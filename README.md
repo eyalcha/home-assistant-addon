@@ -13,13 +13,13 @@
 
 #### Resources
   
-Resource|Size
----|---
+Resource|Size|
+---|---|---
 Boot Order | 0
 Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 2G
 Memory | 512Mb
-Share | ```-mp0 /mnt/ext1/share,mp=/share```
+Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
 Apparmor | ```lxc.apparmor.profile: unconfined```
 
 ## LXC Deepstack

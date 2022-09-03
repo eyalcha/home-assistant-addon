@@ -17,6 +17,23 @@ services:
     privileged: true
     network_mode: host
 
+  appdaemon:
+    container_name: appdaemon
+    image: ${appdaemon_image}:${appdaemon_version}
+    user: "${UID}:${GID}"
+    environment:
+      HA_URL: "http://home-assistant.home:8123"
+      HA_KEY: ${home_assistant_key}
+      DASH_URL: "http://home-assistant.home:5050"
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ${volume1}/appdaemon/conf:/conf
+    ports:
+      - "5050:5050"
+    depends_on:
+      - homeassistant
+    restart: always
+    
   duplicati:
     profiles:
       - backup

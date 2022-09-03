@@ -132,15 +132,18 @@ Check usb devices
 lsusb
 ```
 
-### Install
+### Home Assistant
 
-Get addons compose
 ```
-git clone https://github.com/eyalcha/home-assistant-addons.git
-cd home-assistant-addons
-```
-
-Start addon
-```
-docker-compose --profile nvr up -d
+arch: amd64
+cores: 1
+hostname: home-assistant
+memory: 1024
+mp0: /mnt/ext1/share,mp=/share1
+net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=D6:A8:B1:DA:6D:6A,ip=dhcp,type=veth
+ostype: ubuntu
+rootfs: local-lvm:vm-109-disk-0,size=8G
+swap: 512
+lxc.cap.drop: 
+lxc.apparmor.profile: unconfined
 ```

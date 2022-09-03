@@ -45,7 +45,7 @@ services:
     environment:
       - TZ=${tz}
     volumes:
-      - ${volume1}/duplicati/config:/config
+      - ${share1}/duplicati/config:/config
       - ${share1}:/share1
     restart: always
     
@@ -73,7 +73,7 @@ services:
       - 1883:1883
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${volume1}/mosquitto/config:/mosquitto/config:rw
+      - ${share1}/mosquitto/config:/mosquitto/config:rw
     restart: always
     
   deepstack:
@@ -88,7 +88,7 @@ services:
       VISION-FACE: 'True'
       MODE: High
     volumes:
-      - ${volume1}/deepstack:/datastore
+      - ${share1}/deepstack:/datastore
       
   compreface-postgres-db:
     profiles:
@@ -101,7 +101,7 @@ services:
       - POSTGRES_PASSWORD=${postgres_password}
       - POSTGRES_DB=${postgres_db}
     volumes:
-      - ${volume1}/compreface:/var/lib/postgresql/data
+      - ${share1}/compreface:/var/lib/postgresql/data
 
   compreface-admin:   
     profiles:
@@ -169,7 +169,7 @@ services:
     restart: always
     volumes:
       - /etc/localtime:/etc/localtime:ro    
-      - ${volume1}/doubletake:/.storage
+      - ${share1}/doubletake:/.storage
     ports:
       - 3000:3000      
       
@@ -184,7 +184,7 @@ services:
       - /dev/bus/usb:/dev/bus/usb 
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${volume1}/frigate/config.yaml:/config/config.yml:ro
+      - ${share1}/frigate/config.yaml:/config/config.yml:ro
       - ${share1}/media:/media/frigate
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
         target: /tmp/cache
@@ -206,8 +206,8 @@ services:
       - 3000:80
     volumes:
       - /etc/localtime:/etc/localtime:ro    
-      - ${volume1}/baikal/config:/var/www/baikal/config
-      - ${volume1}/baikal/data:/var/www/baikal/Specific
+      - ${share1}/baikal/config:/var/www/baikal/config
+      - ${share1}/baikal/data:/var/www/baikal/Specific
     restart: always
 
   agendav:

@@ -18,7 +18,7 @@ services:
     network_mode: host
 
   appdaemon:
-     profiles:
+    profiles:
       - hass
     container_name: appdaemon
     image: ${appdaemon_image}:${appdaemon_version}

@@ -9,8 +9,6 @@
 - [Calendar](#lxc-calendar)
 
 ### Samaba
-
-#### Resources
   
 Resource|Size|Proxmox Shell
 ---|---|---
@@ -24,8 +22,6 @@ Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1
 Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
 
 ### Mqtt
-
-#### Resources
   
 Resource|Size|Proxmox Shell
 ---|---|---
@@ -39,8 +35,6 @@ Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1
 Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
 
 ### Duplicati
-
-#### Resources
   
 Resource|Size|Proxmox Shell
 ---|---|---
@@ -50,6 +44,20 @@ Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
 Disk | 8G
 Memory | 512Mb
 Swap | 512Mb
+Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
+Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
+
+## Calendar
+
+### Resources
+  
+Resource|Size|Proxmox Shell
+---|---|---
+Type | LXC | 
+Boot Order | 10
+Template | ubuntu-22.04-standard_22.04-1_amd64-custom.tar.gz
+Disk | 2G
+Memory | 512Mb
 Share | ```-mp0 /mnt/ext1/share,mp=/share1``` | ```pct set <ctid> -mp0 /mnt/ext1/share,mp=/share1```
 Apparmor | ```lxc.apparmor.profile: unconfined``` | ```vi etc/pve/lxc/\<ctid\>.conf```
 

@@ -18,9 +18,10 @@ services:
     network_mode: host
 
   appdaemon:
+     profiles:
+      - hass
     container_name: appdaemon
     image: ${appdaemon_image}:${appdaemon_version}
-    user: "${UID}:${GID}"
     environment:
       HA_URL: "http://home-assistant.home:8123"
       HA_KEY: ${home_assistant_key}

@@ -1,5 +1,3 @@
-# Home Assistant
-
 ### Samaba
 
 ```
@@ -26,7 +24,7 @@ hostname: mqtt
 memory: 256
 mp0: /mnt/ext1/share,mp=/share1
 net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=DE:66:B0:B6:78:AC,ip=dhcp,type=veth
-onboot: 0
+onboot: 1
 ostype: ubuntu
 rootfs: local-lvm:vm-102-disk-0,size=2G
 startup: order=1
@@ -43,6 +41,7 @@ hostname: backup
 memory: 512
 mp0: /mnt/ext1/share,mp=/share1
 net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=1A:D9:D3:F5:5C:54,ip=dhcp,type=veth
+onboot: 1
 ostype: ubuntu
 rootfs: local-lvm:vm-108-disk-0,size=8G
 swap: 512
@@ -58,7 +57,7 @@ hostname: calendar
 memory: 512
 mp0: /mnt/ext1/share,mp=/share1
 net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=8E:2D:87:DB:0F:7B,ip=dhcp,type=veth
-onboot: 0
+onboot: 1
 ostype: ubuntu
 rootfs: local-lvm:vm-107-disk-0,size=4G
 startup: order=10
@@ -141,6 +140,7 @@ hostname: home-assistant
 memory: 1024
 mp0: /mnt/ext1/share,mp=/share1
 net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=D6:A8:B1:DA:6D:6A,ip=dhcp,type=veth
+onboot: 1
 ostype: ubuntu
 rootfs: local-lvm:vm-109-disk-0,size=8G
 swap: 512

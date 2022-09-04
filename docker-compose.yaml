@@ -243,8 +243,8 @@ services:
       - "8086:8086"
     volumes:
       - /etc/localtime:/etc/localtime:ro 
-      - ${share1}/influxb/data:/var/lib/influxdb2
-      - ${share1}/influxb/config:/etc/influxdb2
+      - ${share1}/influxdb/data:/var/lib/influxdb2
+      - ${share1}/influxdb/config:/etc/influxdb2
     environment:
       - DOCKER_INFLUXDB_INIT_MODE=setup
       - DOCKER_INFLUXDB_INIT_USERNAME=${influxdb_username}

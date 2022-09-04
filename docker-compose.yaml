@@ -260,8 +260,10 @@ services:
       - database  
     image: ${grafana_image}:${grafana_version}
     container_name: grafana
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true    
     volumes:
-      -  ${share1}/grafana:/var/lib/grafana
+      - ${share1}/grafana:/var/lib/grafana
     ports:
       - "3000:3000"
     # network_mode: "bridge"

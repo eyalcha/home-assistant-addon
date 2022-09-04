@@ -242,6 +242,7 @@ services:
     ports:
       - "8086:8086"
     volumes:
+      - /etc/localtime:/etc/localtime:ro 
       - ${share1}/influxb/data:/var/lib/influxdb2
       - ${share1}/influxb/config:/etc/influxdb2
     environment:
@@ -263,6 +264,7 @@ services:
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true    
     volumes:
+      - /etc/localtime:/etc/localtime:ro
       - ${share1}/grafana:/var/lib/grafana
     ports:
       - "3000:3000"

@@ -1,5 +1,18 @@
 # HowTo
 
+## Start Containers on Startup
+
+If container doesn't start after startup (has Exited status), create ```startup.sh``` with following content
+```
+#!/bin/sh
+docker start $(docker ps -a -q --filter "status=exited")
+```
+
+And add it as reboot cronjob (```crontab -e```)
+```
+@reboot sleep 10 && /root/startup.sh
+```
+
 ## SSH to CT
 
 By default it’s not possible to establish a direct SSH connection to a Proxmox LXC container. In order to SSH into a container login to Proxmox host and attach to the container with the following command.

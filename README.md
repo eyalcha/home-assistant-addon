@@ -22,3 +22,6 @@ Change owner of grafana volume
 chown -R 472:472 /share1/grafana 
 ```
 
+### PiHole
+
+https://www.datahoards.com/installing-pi-hole-inside-a-proxmox-lxc-container/

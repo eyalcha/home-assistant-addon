@@ -1,5 +1,24 @@
 # HowTo
 
+
+## Keep The System Running While the Lid is Closed
+
+Edit the /etc/systemd/logind.conf
+```
+vi /etc/systemd/logind.conf
+```
+
+Under the [Login] section, set the following
+```
+HandleLidSwitch=ignore
+HandleLidSwitchDocked=ignore
+```
+
+Update the changes
+```
+systemctl restart systemd-logind.service
+```
+
 ## Start Containers on Startup
 
 If container doesn't start after startup (has Exited status), create ```startup.sh``` with following content

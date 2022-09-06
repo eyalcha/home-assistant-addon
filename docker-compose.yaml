@@ -35,6 +35,22 @@ services:
       - homeassistant
     restart: always
     
+  unifi:
+    profiles:
+      - network
+    image: ${unifi_image}:${unifi_version}
+    container_name: unifi
+    environment:
+      - TZ=${tz}
+    volumes:
+      - ${share1}/unifi:/unifi
+    ports:
+      - 8443:8443
+      - 3478:3478/udp
+      - 10001:10001/udp
+      - 8080:8080
+    restart: always
+    
   duplicati:
     profiles:
       - backup

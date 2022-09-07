@@ -4,11 +4,21 @@ Create CT from ubuntu template ```ubuntu-22.04-standard_22.04-1_amd64.tar.zst```
 
 ### Intall
 
+Remove apparmor
+```
+apt remove apparmor
+```
+
 Install packages
 ```
 apt update
 apt upgrade
 apt install curl git zsh
+```
+
+Install oh-my-zsh
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Install docker 
@@ -22,12 +32,6 @@ Install docker compose
 apt install docker-compose
 ```
 
-Install oh-my-zsh
-```
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Create file in 
 
 ### Create Template
 

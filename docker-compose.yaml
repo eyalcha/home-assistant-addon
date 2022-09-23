@@ -63,6 +63,7 @@ services:
     volumes:
       - ${share1}/duplicati/config:/config
       - ${share1}:/share1
+      - ${share2}:/share2
     restart: always
     
   samba:

@@ -113,7 +113,7 @@ services:
     profiles:
       - compreface    
     # image: ${postgres_image}:${postgres_version}
-    image: ${compreface-postgres-db}:${comprefac_postgres_version}
+    image: ${compreface-postgres-db}:${compreface_postgres_version}
     container_name: "compreface-postgres-db"
     restart: unless-stopped
     environment:
